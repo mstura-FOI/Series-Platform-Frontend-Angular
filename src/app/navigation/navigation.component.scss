@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    background-color: #1e395a;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  a {
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  a.active {
+    background-color: #ccc;
+  }
+  

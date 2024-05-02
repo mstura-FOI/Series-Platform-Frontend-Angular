@@ -1,0 +1,32 @@
+$implemented-color: #e68a1a;
+$not-implemented-color: rgb(57, 244, 44);
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #1e395a;
+  color: #fff;
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #1e395a;
+    color: #fff;
+  }
+
+  .implemented {
+    background-color: $implemented-color;
+  }
+
+  .not-implemented {
+    background-color: $not-implemented-color;
+  }
+
+  tr:nth-child(even) {
+    background-color: #1e395a;
+    color: #fff;
+  }
+}

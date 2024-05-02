@@ -1,0 +1,26 @@
+<div *ngIf="tip_korisnika == 2">
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <label for="ime">Ime</label>
+    <input type="text" formControlName="ime" id="ime" />
+    <br>
+  
+    <label for="prezime">Prezime</label>
+    <input type="text" formControlName="prezime" id="prezime" />
+    <br>
+   <label for="korime">Korisničko ime</label>
+    <input type="text" formControlName="korime" id="korime" required />
+    <br>
+    <label for="lozinka">Lozinka: (Minimum 6 znakova)</label>
+    <input type="password" formControlName="lozinka" id="lozinka" required />
+    <br>
+  
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" id="email" required />
+    <br>
+  
+   
+  
+    <input type="submit" value="Registriraj" [disabled]="!registrationForm.valid" />
+  </form>
+  </div>
+  <div *ngIf="tip_korisnika != 2"> Nemate pristup</div>

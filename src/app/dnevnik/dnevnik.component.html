@@ -1,0 +1,22 @@
+<div *ngIf="tip_korisnika == 2">
+    <div id="sadrzaj">
+        <div id="stranicenje"><button id="nazad" (click)="Previous()">Previous</button><button id="naprijed" (click)="Next()">Next</button><button id="datum" (click)="Date_Sort()">Sortiraj po datumu</button></div>
+        <table border="1">
+          <tr>
+            <th>Id</th>
+            <th>Datum</th>
+            <th>Metoda</th>
+            <th>Detalji</th>
+            <th>Korisnik_id</th>
+          </tr>
+          <tr *ngFor="let f of dnevnik">
+            <td>{{ f.id }}</td>
+            <td>{{ f.datum }}</td>
+            <td>{{ f.metoda }}</td>
+            <td>{{ f.detalji }}</td>
+            <td>{{ f.korisnik_id }}</td>
+          </tr>
+        </table>
+      </div>
+</div>
+<div *ngIf="tip_korisnika != 2">Nemate pristupa</div>

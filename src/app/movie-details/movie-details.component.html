@@ -1,0 +1,55 @@
+
+<table border="1">
+    <tr>
+        <th>Naziv</th>
+        <td>{{ serija?.id }}</td>
+    </tr>
+    <tr>
+        <th>Opis</th>
+        <td>{{ serija?.overview }}</td>
+    </tr>
+    <tr>
+        <th>Broj Sezona</th>
+        <td>{{ serija?.number_of_seasons }}</td>
+    </tr>
+    <tr>
+        <th>Broj Epizoda</th>
+        <td>{{ serija?.number_of_episodes }}</td>
+    </tr>
+    <tr>
+        <th>Popularnost</th>
+        <td>{{ serija?.popularity }}</td>
+    </tr>
+    <tr>
+        <th>Slika</th>
+        <td><img
+            [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + serija?.poster_path"
+            width="200"
+            [alt]="'slika_' + serija?.title"
+          /></td>
+    </tr>
+    <tr>
+        <th>Poveznica na Vanjsku Stranicu</th>
+        <td>{{ serija?.homepage }}</td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+      <th>Id</th>
+      <th>Broj epizoda</th>
+      <th>Sezona</th>
+      <th>Opis</th>
+      <th>Naziv</th>
+      <th>ID Serije</th>
+    </tr>
+    <tr *ngFor="let f of sezona">
+      <td>{{ f.id }}</td>
+      <td>{{ f.broj_epizoda }}</td>
+      <td>{{ f.broj_sezone }}</td>
+      <td>{{ f.opis }}</td>
+      <td>{{ f.naziv }}</td>
+      <td>{{ f.serija_id }}</td>
+    </tr>
+  </table>
+<div class="save"><button (click)="onAddToFavourites()" *ngIf="tip_korisnika == 1 || tip_korisnika == 2" >Dodaj u favorite</button></div>
+<div class="save"><button (click)="githubUserAddsSeries()" *ngIf="ifExtension(oauth)" >Dodaj u favorite</button></div>

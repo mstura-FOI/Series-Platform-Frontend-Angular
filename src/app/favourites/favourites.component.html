@@ -1,0 +1,55 @@
+<div>Ako se slučajno tek dodani favorit ne nalazi na listi, ne brini te samo refreshajte stranicu in on će se magično pojaviti!</div>
+<table border="1" *ngIf="tip_korisnika == 1 || tip_korisnika == 2">
+    <tr>
+      <th>Id</th>
+      <th>Naziv</th>
+      <th>Opis</th>
+      <th>Broj sezona</th>
+      <th>Broj epizoda</th>
+      <th>Poster</th>
+      <th>Popularnost</th>
+      <th>Poveznica</th>
+      <th>Akcije</th>
+    </tr>
+    <tr *ngFor="let f of serije">
+      <td>{{ f.id }}</td>
+      <td>{{ f.naziv }}</td>
+      <td>{{ f.opis }}</td>
+      <td>{{ f.broj_sezona }}</td>
+      <td>{{ f.broj_epizoda }}</td>
+      <td><img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + f.poster_putanja" width="100" [alt]="'slika_' + f.popularnost" /></td>
+      <td>{{ f.popularnost }}</td>
+      <td>{{ f.poveznica }}</td>
+      <td>
+        <button class="detalji-button" (click)="details(f.id)">Detalji serije</button>
+        <button class="obrisi-button" (click)="delete(f.id,user_id)" >Obrisi</button>
+      </td>
+    </tr>
+  </table>
+  <table border="1" *ngIf="ifExtension(oauth)">
+    <tr>
+      <th>Id</th>
+      <th>Naziv</th>
+      <th>Opis</th>
+      <th>Broj sezona</th>
+      <th>Broj epizoda</th>
+      <th>Poster</th>
+      <th>Popularnost</th>
+      <th>Poveznica</th>
+      <th>Akcije</th>
+    </tr>
+    <tr *ngFor="let f of gitSerije">
+      <td>{{ f.serijaID }}</td>
+      <td>{{ f.naziv }}</td>
+      <td>{{ f.opis }}</td>
+      <td>{{ f.broj_sezona }}</td>
+      <td>{{ f.broj_epizoda }}</td>
+      <td><img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + f.poster_putanja" width="100" [alt]="'slika_' + f.popularnost" /></td>
+      <td>{{ f.popularnost }}</td>
+      <td>{{ f.poveznica }}</td>
+      <td>
+        <button class="detalji-button" (click)="details(f.serijaID)">Detalji serije</button>
+        <button class="obrisi-button"  (click)="gitDelete(f.serijaID)">Obrisi</button>
+      </td>
+    </tr>
+  </table>

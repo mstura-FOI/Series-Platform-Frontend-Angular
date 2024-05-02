@@ -1,0 +1,35 @@
+<div *ngIf="tip_korisnika == 2">
+    <div id="sadrzaj">
+        <table border="1">
+          <tr>
+            <th>Id</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Korisnicko ime</th>
+            <th>Lozinka</th>
+            <th>Adresa</th>
+            <th>Email</th>
+            <th>Dob</th>
+            <th>Drzava</th>
+            <th>Tip korisnika</th>
+          </tr>
+          <tr *ngFor="let f of korisnici">
+            <td>{{ f.id }}</td>
+            <td>{{ f.ime }}</td>
+            <td>{{ f.prezime }}</td>
+            <td>{{ f.korime }}</td>
+            <td>{{ f.lozinka }}</td>
+            <td>{{ f.adresa }}</td>
+            <td>{{ f.email }}</td>
+            <td>{{ f.dob }}</td>
+            <td>{{ f.drzava }}</td>
+            <td>{{ f.tip_korisnika_id === 1 ? 'Obican korisnik' : 'Admin' }}</td>
+            <td *ngIf="f.tip_korisnika_id === 1">
+              <button class="obrisi-button" (click)="deleteUser(f.korime, f.id)">Obrisi</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+</div>
+<div *ngIf="tip_korisnika != 2">Nemate pristupa</div>

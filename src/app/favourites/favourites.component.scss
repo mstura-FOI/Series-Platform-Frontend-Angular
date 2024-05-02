@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  tr {
+    background-color: #1e395a;
+
+    th {
+      padding: 10px;
+      color: #fff; /* Set text color to white */
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #1e395a;
+  }
+
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #fff; /* Set text color to white */
+
+    img {
+      width: 100px;
+    }
+
+    .obrisi-button {
+      align-self: center;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      margin-top: 0.75rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+  }
+}
+
+.detalji-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #a1e06d;
+  }
+}

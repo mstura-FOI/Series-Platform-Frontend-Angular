@@ -1,0 +1,22 @@
+
+
+<div  class="login-container">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+    <label for="username">Username: obican ili admin, test</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+
+    <label for="password">Password: (Pazite na caps lock!) rwa,za korisnika test 123456</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+    <label for="password">Totp: Ako nemate totp tu ništa ne stavljate(za korisnika test 145358)</label>
+    <input type="number" id="totp" name="totp" [(ngModel)]="totp" >
+
+    <button type="submit">Login</button>
+    <button class="git" (click)="githubLogin()">Github Login</button>
+  </form>
+</div>
+
+
+

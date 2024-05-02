@@ -1,0 +1,16 @@
+<nav>
+  <div>
+    <a routerLink="" routerLinkActive="active">Home</a>
+    <a *ngIf="logged(oauth)" routerLink="login" routerLinkActive="active">Prijava</a>
+    <a  routerLink="documentation" routerLinkActive="active">Dokumentacija</a>
+    <a *ngIf="tip_korisnika == 1 || tip_korisnika == 2 || ifExtension(oauth)" routerLink="favourites" routerLinkActive="active">Favoriti</a>
+    <a *ngIf="tip_korisnika == 1 || tip_korisnika == 2" routerLink="profile" routerLinkActive="active">Profil</a>
+    <a *ngIf="tip_korisnika == 2 " routerLink="dnevnik" routerLinkActive="active">Dnevnik</a>
+    <a *ngIf="tip_korisnika == 2 " routerLink="registration" routerLinkActive="active">Registracija</a>
+    <a *ngIf=" tip_korisnika == 2" routerLink="users" routerLinkActive="active">Korisnici</a>
+    <button *ngIf="tip_korisnika == 2 || tip_korisnika == 1 || ifExtension(oauth)" (click)="logOut()" >Odjava</button>
+</div>
+<div>Marino Štura &#169; RWA_Series_Projekt</div>
+  </nav> 
+  
+  

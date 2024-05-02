@@ -1,0 +1,48 @@
+
+
+#sadrzaj {
+    margin: 20px;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  
+      th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      tr {
+        background-color: #f9f9f9;
+      }
+    }
+  
+    button.obrisi-button {
+      margin-top: 5px;
+      padding: 8px;
+      cursor: pointer;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+  }
+  
+
+  div[ngIf='tip_korisnika != 2'] {
+    color: red;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  

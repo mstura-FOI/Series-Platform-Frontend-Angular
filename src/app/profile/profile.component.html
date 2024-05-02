@@ -1,0 +1,37 @@
+<form *ngIf="id != 0" [formGroup]="formaPrijava" (ngSubmit)="onSubmit()">
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" name="ime" formControlName="ime" required><br>
+  
+    <label for="prezime">Prezime:</label>
+    <input type="text" id="prezime" name="prezime" formControlName="prezime" required><br>
+  
+    <label for="korime">Korisničko ime:</label>
+    <input type="text" id="korime" name="korime" formControlName="korime" [disabled]="true"><br>
+  
+    <label for="lozinka">Lozinka:</label>
+    <input type="password" id="lozinka" name="lozinka" formControlName="lozinka" [disabled]="true"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" formControlName="email" [disabled]="true"><br>
+
+    <label for="adresa">Adresa:</label>
+    <textarea id="adresa" name="adresa" formControlName="adresa"></textarea><br>
+  
+    <label for="dob">Datum rođenja:</label>
+    <input type="text" id="dob" name="dob" formControlName="dob"><br>
+  
+    <label for="drzava">Država:</label>
+    <input type="text" id="drzava" name="drzava" formControlName="drzava"><br>
+   <label for="totp_enabled">DvoFaktorska Autentikacija:</label>
+      <input  type="text" id="totp_enabled" name="totp_enabled" formControlName="totp_enabled" [disabled]="true">
+       <button type="button"  (click)="checked()">{{ isChecked ? 'Isključi' : 'Uključi' }}</button>
+      
+    
+      
+      
+   
+    
+    <button type="submit" [disabled]="!formaPrijava.valid">Submit</button>
+  </form>
+ 
+  <div *ngIf="id == 0">Nemate pristup: logirajte se</div>
